@@ -1,0 +1,23 @@
+# This is the manifest.yml file for the Walnut project.
+# It contains project configurations and metadata using the Merc data format.
+# The 'type' field specifies that this project follows the 'Walnut' standard structure.
+version: 0.0.0
+kind: Walnut
+metadata:
+  name: MyWalnut
+  description: "A personal Walnut repository called MyWalnut."
+  authors: ["Your Name"]
+  license: "MIT"
+spec:
+  sync: git
+  dependencies:
+    - dependency1
+    - dependency2
+  bin:
+    - create: "command to add new Notes"
+    - remove: "Command to delete existing Notes"
+env:
+  WALNUT_BASE_DIR: "$HOME/Walnut"
+  WALNUT_BIN_DIR: "$WALNUT_BASE_DIR/.bin"
+  WALNUT: "$WALNUT_BASE_DIR"
+

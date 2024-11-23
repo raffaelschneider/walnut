@@ -1,0 +1,75 @@
+#!/usr/bin/env sh
+
+# Function to display usage
+usage() {
+  echo "Usage: create <item_type> [sub_category]"
+  echo "Example: create note Personal"
+  exit 1
+}
+
+# Check for at least one argument
+if [ $# -lt 1 ]; then
+  usage
+fi
+
+# Check if WALNUT_BASE_DIR is set
+if [ -z "$WALNUT_BASE_DIR" ]; then
+  echo "Error: WALNUT_BASE_DIR is not set. Please set it before running this script."
+  exit 1
+fi
+
+ITEM_TYPE="$1"
+SUB_CATEGORY="$2"
+
+DATE_PREFIX=$(date '+%Y-%m-%d')
+TEMPLATE_DIR="$WALNUT_BASE_DIR/Templates"
+TARGET_DIR="$WALNUT_BASE_DIR"
+
+# Determine template and target directories based on item type
+case "$ITEM_TYPE" in
+  note)
+    TEMPLATE="$TEMPLATE_DIR/Notes/_note.md"
+    TARGET_DIR="$TARGET_DIR/Notes"
+    ;;
+  journal)
+    TEMPLATE="$TEMPLATE_DIR/Journal/_record.md"
+    TARGET_DIR="$TARGET_DIR/Journal"
+    ;;
+  reference)
+    TEMPLATE="$TEMPLATE_DIR/References/Bibliography/_reference.bibtex"
+    TARGET_DIR="$TARGET_DIR/References/Bibliography"
+    ;;
+  *)
+    echo "Unknown item type: $ITEM_TYPE"
+    usage
+    ;;
+esac
+
+# Append subcategory if provided
+if [ -n "$SUB_CATEGORY" ]; then
+  TARGET_DIR="$TARGET_DIR/$SUB_CATEGORY"
+fi
+
+# Ensure target directory exists
+mkdir -p "$TARGET_DIR"
+
+# Generate filename
+case "$ITEM_TYPE" in
+  note|journal)
+    FILENAME="${DATE_PREFIX}-${ITEM_TYPE}.md"
+    ;;
+  reference)
+    FILENAME="${DATE_PREFIX}-reference.bib"
+    ;;
+esac
+
+TARGET_PATH="$TARGET_DIR/$FILENAME"
+
+# Copy template to target path
+if [ -f "$TEMPLATE" ]; then
+  cp "$TEMPLATE" "$TARGET_PATH"
+  echo "Created $ITEM_TYPE at $TARGET_PATH"
+else
+  echo "Template not found: $TEMPLATE"
+  exit 1
+fi
