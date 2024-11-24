@@ -1,0 +1,59 @@
+#!/usr/bin/env sh
+
+# walnut - Walnut CLI to manage multiple Walnut knowledge base instances
+
+# Function to display usage information
+usage() {
+  echo "Usage: walnut <command> [arguments]"
+  echo "Example: walnut create note"
+  echo
+  echo "Available commands in current WALNUT instance ($WALNUT):"
+  for cmd in "$BIN_DIR/"*; do
+    [ -x "$cmd" ] && echo "  $(basename "$cmd")"
+  done
+  exit 1
+}
+
+# Check if WALNUT environment variable is set
+if [ -z "$WALNUT" ]; then
+  echo "Error: WALNUT environment variable is not set."
+  echo "Please set WALNUT to the base directory of your Walnut instance."
+  exit 1
+fi
+
+# Verify that the WALNUT directory exists
+if [ ! -d "$WALNUT" ]; then
+  echo "Error: WALNUT directory '$WALNUT' does not exist."
+  exit 1
+fi
+
+# Define the BIN_DIR
+BIN_DIR="$WALNUT/.bin"
+
+# Verify that the .bin directory exists
+if [ ! -d "$BIN_DIR" ]; then
+  echo "Error: No .bin directory found in WALNUT directory '$WALNUT'."
+  exit 1
+fi
+
+# If no command is provided, display usage
+if [ $# -lt 1 ]; then
+  usage
+fi
+
+# Extract the command and shift it from the arguments
+COMMAND="$1"
+shift
+
+# Construct the path to the command script
+COMMAND_SCRIPT="$BIN_DIR/$COMMAND"
+
+# Check if the command script exists and is executable
+if [ -x "$COMMAND_SCRIPT" ]; then
+  # Execute the command script with the remaining arguments
+  "$COMMAND_SCRIPT" "$@"
+else
+  echo "Error: Command '$COMMAND' not found in '$BIN_DIR'."
+  usage
+fi
+
