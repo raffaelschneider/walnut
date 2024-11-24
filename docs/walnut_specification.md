@@ -131,18 +131,22 @@ Table of Contents
 
 4.1.1. Journal/
 
-   *  Purpose: Stores daily journal entries.
+   Purpose:
+      Stores daily journal entries.
 
-   *  File Naming: Files SHOULD be named using the date format
+   File Naming:
+      Files SHOULD be named using the date format
       `YYYY-MM-DD-record.md`.
 
-   *  Content: Personal reflections, daily logs, or diary entries.
+   Content:
+      Personal reflections, daily logs, or diary entries.
 
 4.1.2. Notes/
 
-   *  Purpose: Contains personal notes organized by category.
+   Purpose:
+      Contains personal notes organized by category.
 
-   *  Subdirectories:
+   Subdirectories:
 
      *  Personal/: Personal thoughts, ideas, and miscellaneous notes.
 
@@ -150,71 +154,86 @@ Table of Contents
 
      *  Work/: Professional or work-related notes.
 
-   *  File Naming: Files SHOULD be named with a date prefix and a
-      descriptive title, e.g., `YYYY-MM-DD-note-title.md`.
+   File Naming:
+      Files SHOULD be named with a date prefix and a descriptive 
+      title, e.g., `YYYY-MM-DD-note-title.md`.
 
-   *  Content: Written in Markdown, including YAML front matter for
-      metadata.
+   Content:
+      Written in Markdown, including YAML front matter for  metadata.
 
 4.1.3. References/
 
-   *  Purpose: Holds all reference materials and external resources.
+   Purpose:
+      Holds all reference materials and external resources.
 
-   *  Subdirectories:
+   Subdirectories:
 
      *  Articles/:
 
-       *  Files: Articles in PDF or other formats.
+         Files:
+            Articles in PDF or other formats.
 
-       *  Example: `1970-01-01-article.pdf`
+         Example:
+            1970-01-01-article.pdf
 
      *  Bibliography/:
 
-       *  Files: BibTeX bibliographic references.
+         Files:
+            BibTeX bibliographic references.
 
-       *  Example: `references.bib`
+         Example:
+            references.bib
 
      *  Books/:
 
-       *  Files: Digital books in EPUB or PDF format.
+          Files:
+             Digital books in EPUB or PDF format.
 
-       *  Example: `1970-01-01-book.epub`
+          Example:
+             1970-01-01-book.epub
 
      *  Contacts/:
 
-       *  Files**: Contact information in plain text.
+          Files:
+             Contact information in plain text.
 
-       *  Example: `1970-01-01-contact.txt`
+          Example:
+             1970-01-01-contact.txt
 
      *  Media/:
 
-       *  Files: Images, screenshots, scans, and other media files.
+          Files:
+             Images, screenshots, scans, and other media files.
 
-       * Example: `1970-01-01-image.png`
+          Example:
+             1970-01-01-image.png
 
      * Papers/:
 
-       * Files: Academic papers and research documents.
+          Files:
+             Academic papers and research documents.
 
-       * Example: `1970-01-01-paper.pdf`
+          Example:
+             1970-01-01-paper.pdf
 
      * Podcasts/:
 
-       * Files: Audio files of podcasts.
+          Files:
+             Audio files of podcasts.
 
-       * Example: `1970-01-01-podcast.mp3`
+          Example:
+             1970-01-01-podcast.mp3
 
      * WebContent/:
 
-       * .url Files: Stores URLs and metadata.
+          Files
+             .url Files: Stores URLs and metadata. And content dir-
+             ectories named after the .url files, containing down-
+             loaded web content.
 
-         * Example: `1970-01-01-page.url`
-
-       * Content Directories**: Named after the `.url` files,
-
-         containing downloaded web content.
-
-         * Example: `1970-01-01-page/`
+          Example:
+             1970-01-01-page.url
+             1970-01-01-page/
 
 4.1.4. Templates/
 
