@@ -21,7 +21,7 @@ Table of Contents
    2. Conventions Used in This Document ............................... 2
    3. Overview of Walnut .............................................. 3
    4. Directory Structure ............................................. 3
-      4.1. KnowledgeBase/ ............................................. 4
+      4.1. Walnut/ .................................................... 4
          4.1.1. Journal/ .............................................. 4
          4.1.2. Notes/ ................................................ 4
          4.1.3. References/ ........................................... 5
@@ -63,16 +63,21 @@ Table of Contents
    conventions, and file formats for personal knowledge bases. It
    emphasizes:
 
-   - **Simplicity**: Adhering to the KISS (Keep It Simple, Stupid)
-     principle for ease of use and maintenance.
-   - **Open Formats**: Utilizing plain text formats like Markdown, YAML,
-     and BibTeX to ensure longevity and accessibility.
-   - **POSIX Compatibility**: Allowing interaction with the knowledge
-     base using standard POSIX tools such as `grep`, `find`, `awk`, and
-     `sed`.
-   - **Flexibility**: Adapting to individual workflows and preferences.
-   - **Extensibility**: Encouraging the development and sharing of
-     custom tools and scripts.
+   *  Simplicity: Adhering to the KISS (Keep It Simple, Stupid)
+
+   *  principle for ease of use and maintenance.
+
+   *  Open Formats: Utilizing plain text formats like Markdown, YAML,
+      and BibTeX to ensure longevity and accessibility.
+
+   *  POSIX Compatibility: Allowing interaction with the knowledge
+      base using standard POSIX tools such as `grep`, `find`, `awk`,
+      and `sed`.
+
+   *  Flexibility: Adapting to individual workflows and preferences.
+
+   *  Extensibility: Encouraging the development and sharing of
+      custom tools and scripts.
 
 4. Directory Structure
 
@@ -80,45 +85,44 @@ Table of Contents
    structure as outlined below. This structure organizes content into
    logical categories, making it easy to locate and manage information.
 
-   Walnut/
-   ├── Journal/
-   │   └── 1970-01-01-record.md
-   ├── Notes/
-   │   ├── Personal/
-   │   │   └── 1970-01-01-personal-note.md
-   │   ├── Projects/
-   │   │   └── 1970-01-01-project-note.md
-   │   └── Work/
-   │       └── 1970-01-01-work-note.md
-   ├── References/
-   │   ├── Articles/
-   │   │   └── 1970-01-01-article.pdf
-   │   ├── Bibliography/
-   │   │   └── 1970-01-01-reference.bibtex
-   │   ├── Books/
-   │   │   └── 1970-01-01-book.epub
-   │   ├── Contacts/
-   │   │   └── 1970-01-01-contact.txt
-   │   ├── Glossary/
-   │   │   └── 1970-01-01-definition.md
-   │   ├── Media/
-   │   │   └── 1970-01-01-screenshot.png
-   │   ├── Papers/
-   │   │   └── 1970-01-01-paper.pdf
-   │   ├── Podcasts/
-   │   │   └── 1970-01-01-podcast.mp3
-   │   └── WebContent/
-   │       └── 1970-01-01-page.url
-   ├── Templates/
-   │   ├── Journal/
-   │   │   └── _record.md
-   │   ├── Notes/
-   │   │   └── _note.md
-   │   └── References/
-   │       └── Bibliography/
-   │           └── _reference.bibtex
-   └── walnut.yml
-
+      Walnut/
+      ├── Journal/
+      │   └── 1970-01-01-record.md
+      ├── Notes/
+      │   ├── Personal/
+      │   │   └── 1970-01-01-personal-note.md
+      │   ├── Projects/
+      │   │   └── 1970-01-01-project-note.md
+      │   └── Work/
+      │       └── 1970-01-01-work-note.md
+      ├── References/
+      │   ├── Articles/
+      │   │   └── 1970-01-01-article.pdf
+      │   ├── Bibliography/
+      │   │   └── 1970-01-01-reference.bibtex
+      │   ├── Books/
+      │   │   └── 1970-01-01-book.epub
+      │   ├── Contacts/
+      │   │   └── 1970-01-01-contact.txt
+      │   ├── Glossary/
+      │   │   └── 1970-01-01-definition.md
+      │   ├── Media/
+      │   │   └── 1970-01-01-screenshot.png
+      │   ├── Papers/
+      │   │   └── 1970-01-01-paper.pdf
+      │   ├── Podcasts/
+      │   │   └── 1970-01-01-podcast.mp3
+      │   └── WebContent/
+      │       └── 1970-01-01-page.url
+      ├── Templates/
+      │   ├── Journal/
+      │   │   └── _record.md
+      │   ├── Notes/
+      │   │   └── _note.md
+      │   └── References/
+      │       └── Bibliography/
+      │           └── _reference.bibtex
+      └── walnut.yml
 
 4.1. Walnut/
 
@@ -127,70 +131,114 @@ Table of Contents
 
 4.1.1. Journal/
 
-   - **Purpose**: Stores daily journal entries.
-   - **File Naming**: Files SHOULD be named using the date format
-     `YYYY-MM-DD-record.md`.
-   - **Content**: Personal reflections, daily logs, or diary entries.
+   *  Purpose: Stores daily journal entries.
+
+   *  File Naming: Files SHOULD be named using the date format
+      `YYYY-MM-DD-record.md`.
+
+   *  Content: Personal reflections, daily logs, or diary entries.
 
 4.1.2. Notes/
 
-   - **Purpose**: Contains personal notes organized by category.
-   - **Subdirectories**:
-     - **Personal/**: Personal thoughts, ideas, and miscellaneous notes.
-     - **Projects/**: Notes related to specific projects.
-     - **Work/**: Professional or work-related notes.
-   - **File Naming**: Files SHOULD be named with a date prefix and a
-     descriptive title, e.g., `YYYY-MM-DD-note-title.md`.
-   - **Content**: Written in Markdown, including YAML front matter for
-     metadata.
+   *  Purpose: Contains personal notes organized by category.
+
+   *  Subdirectories:
+
+     *  Personal/: Personal thoughts, ideas, and miscellaneous notes.
+
+     *  Projects/: Notes related to specific projects.
+
+     *  Work/: Professional or work-related notes.
+
+   *  File Naming: Files SHOULD be named with a date prefix and a
+      descriptive title, e.g., `YYYY-MM-DD-note-title.md`.
+
+   *  Content: Written in Markdown, including YAML front matter for
+      metadata.
 
 4.1.3. References/
 
-   - **Purpose**: Holds all reference materials and external resources.
-   - **Subdirectories**:
-     - **Articles/**:
-       - **Files**: Articles in PDF or other formats.
-       - **Example**: `1970-01-01-article.pdf`
-     - **Bibliography/**:
-       - **Files**: BibTeX bibliographic references.
-       - **Example**: `references.bib`
-     - **Books/**:
-       - **Files**: Digital books in EPUB or PDF format.
-       - **Example**: `1970-01-01-book.epub`
-     - **Contacts/**:
-       - **Files**: Contact information in plain text.
-       - **Example**: `1970-01-01-contact.txt`
-     - **Media/**:
-       - **Files**: Images, screenshots, scans, and other media files.
-       - **Example**: `1970-01-01-image.png`
-     - **Papers/**:
-       - **Files**: Academic papers and research documents.
-       - **Example**: `1970-01-01-paper.pdf`
-     - **Podcasts/**:
-       - **Files**: Audio files of podcasts.
-       - **Example**: `1970-01-01-podcast.mp3`
-     - **WebContent/**:
-       - **.url Files**: Stores URLs and metadata.
-         - **Example**: `1970-01-01-page.url`
-       - **Content Directories**: Named after the `.url` files,
+   *  Purpose: Holds all reference materials and external resources.
+
+   *  Subdirectories:
+
+     *  Articles/:
+
+       *  Files: Articles in PDF or other formats.
+
+       *  Example: `1970-01-01-article.pdf`
+
+     *  Bibliography/:
+
+       *  Files: BibTeX bibliographic references.
+
+       *  Example: `references.bib`
+
+     *  Books/:
+
+       *  Files: Digital books in EPUB or PDF format.
+
+       *  Example: `1970-01-01-book.epub`
+
+     *  Contacts/:
+
+       *  Files**: Contact information in plain text.
+
+       *  Example: `1970-01-01-contact.txt`
+
+     *  Media/:
+
+       *  Files: Images, screenshots, scans, and other media files.
+
+       * Example: `1970-01-01-image.png`
+
+     * Papers/:
+
+       * Files: Academic papers and research documents.
+
+       * Example: `1970-01-01-paper.pdf`
+
+     * Podcasts/:
+
+       * Files: Audio files of podcasts.
+
+       * Example: `1970-01-01-podcast.mp3`
+
+     * WebContent/:
+
+       * .url Files: Stores URLs and metadata.
+
+         * Example: `1970-01-01-page.url`
+
+       * Content Directories**: Named after the `.url` files,
+
          containing downloaded web content.
-         - **Example**: `1970-01-01-page/`
+
+         * Example: `1970-01-01-page/`
 
 4.1.4. Templates/
 
-   - **Purpose**: Contains templates for creating new entries, ensuring
+   * Purpose: Contains templates for creating new entries, ensuring
      consistency.
-   - **Subdirectories**:
-     - **Journal/**:
-       - **Template**: `_record.md`
-     - **Notes/**:
-       - **Template**: `_note.md`
-       - **Categories**: Placeholder directories for category-specific
+
+   * Subdirectories:
+
+     * Journal/:
+
+       * Template: `_record.md`
+
+     * Notes/:
+
+       * Template: `_note.md`
+
+       * Categories: Placeholder directories for category-specific
          templates.
-     - **References/**:
-       - **Templates**: Placeholder directories for reference templates.
-   - **File Naming**: Template files SHOULD begin with an underscore
-  `_`.
+
+     * References/:
+
+       * Templates: Placeholder directories for reference templates.
+
+   * File Naming: Template files SHOULD begin with an underscore `_`.
 
 4.1.5. walnut.yml
 
@@ -217,12 +265,12 @@ Table of Contents
 
 6.1. Markdown Files
 
-- **Usage**: For notes, journal entries, and documentation.
-- **Extension**: `.md`
-- **Content**: Written in Markdown for readability and compatibility.
-- **Example**:
+   - **Usage**: For notes, journal entries, and documentation.
+   - **Extension**: `.md`
+   - **Content**: Written in Markdown for readability and compatibility.
+   - **Example**:
+        <sourcecode type="markdown">
 
-  ```markdown
   ---
   title: "Meeting Notes"
   date: "2023-11-24"
